@@ -1,0 +1,38 @@
+.todo {
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 15px;
+  list-style-type: none;
+}
+
+.todo-exit-active {
+  animation: faded-out 500ms forwards;
+}
+
+.todo-enter-active {
+  animation: faded-in 500ms forwards;
+}
+
+@keyframes faded-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes faded-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}

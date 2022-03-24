@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.scss';
+import { publicRoutes } from './routes/publicRoutes';
+import { NavLink } from 'react-router-dom';
+import AppRouter from './components/AppRouter';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className='navbar'>
+        <ul className='links'>
+          <li className='link'>ANIMATION TYPES</li>
+          {publicRoutes.map((link) => (
+            <li className='link' key={link.path}>
+              <NavLink
+                to={link.path}>
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <AppRouter />
     </div>
   );
 }
